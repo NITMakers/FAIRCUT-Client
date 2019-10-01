@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZX5-KI-cdU">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="FAIRCUT-Client" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="FAIRCUT-Client" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About FAIRCUT-Client" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="n21-eq-wdw" kind="show" id="7gq-uU-rXY"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide FAIRCUT-Client" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit FAIRCUT-Client" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="R4o-n2-Eq4">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="DIl-cC-cCs"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="DRN-fu-gQh"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="FAIRCUT-Client Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FAIRCUT_Client" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="FAIRCUT" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="219" y="440" width="600" height="400"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="600" height="400"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="ZX5-KI-cdU" kind="relationship" relationship="window.shadowedContentViewController" id="aB4-7A-fhd"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="341"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="aBw-p7-oqO">
+            <objects>
+                <windowController id="a6j-H3-FLh" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="cWR-ea-neS">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="a6j-H3-FLh" id="aaZ-05-cgT"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="n21-eq-wdw" kind="relationship" relationship="window.shadowedContentViewController" id="bID-JB-ZjH"/>
+                    </connections>
+                </windowController>
+                <customObject id="Faw-Cy-mgY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="350"/>
+        </scene>
+        <!--Preferences View Controller-->
+        <scene sceneID="Vc4-o5-iLm">
+            <objects>
+                <viewController id="n21-eq-wdw" customClass="PreferencesViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="McT-00-GL3">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box title="FAIRCUT-Client settings" translatesAutoresizingMaskIntoConstraints="NO" id="uEo-9t-bvZ">
+                                <rect key="frame" x="17" y="16" width="446" height="234"/>
+                                <view key="contentView" id="wTa-fj-pmv">
+                                    <rect key="frame" x="3" y="3" width="440" height="216"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <gridView xPlacement="trailing" yPlacement="center" rowAlignment="none" rowSpacing="10" columnSpacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-Xn-S2j">
+                                            <rect key="frame" x="80" y="66" width="280" height="85"/>
+                                            <rows>
+                                                <gridRow id="nW7-Ki-Oh1"/>
+                                                <gridRow id="phW-cL-KMM"/>
+                                                <gridRow id="3KM-3k-d8g"/>
+                                            </rows>
+                                            <columns>
+                                                <gridColumn id="L44-T8-c3q"/>
+                                                <gridColumn id="G7P-oG-cOU"/>
+                                            </columns>
+                                            <gridCells>
+                                                <gridCell row="nW7-Ki-Oh1" column="L44-T8-c3q" id="fO9-nz-QME">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-Su-R5T">
+                                                        <rect key="frame" x="60" y="65" width="120" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Server IP Address: " id="di0-gu-RTy">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="nW7-Ki-Oh1" column="G7P-oG-cOU" id="FwG-Ft-nj7">
+                                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-48-abK">
+                                                        <rect key="frame" x="180" y="63" width="100" height="22"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="DS2-JC-6Od">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="phW-cL-KMM" column="L44-T8-c3q" id="CgA-eg-8BT">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-3V-66C">
+                                                        <rect key="frame" x="43" y="34" width="137" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Chart color template: " id="yE4-1n-uZk">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="phW-cL-KMM" column="G7P-oG-cOU" id="hDw-ru-7BE">
+                                                    <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-9Q-0xd">
+                                                        <rect key="frame" x="183" y="29" width="100" height="25"/>
+                                                        <popUpButtonCell key="cell" type="push" title="Colorful" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ciA-dV-rib" id="PVo-yg-w3B">
+                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="menu"/>
+                                                            <menu key="menu" id="EjT-c4-FJA">
+                                                                <items>
+                                                                    <menuItem title="Colorful" state="on" identifier="colorful" id="ciA-dV-rib"/>
+                                                                    <menuItem title="Liberty" tag="1" identifier="liberty" id="xLZ-6u-ItZ"/>
+                                                                    <menuItem title="Joyful" tag="2" identifier="joyful" id="dvk-OW-QYE"/>
+                                                                    <menuItem title="Vordiplom" tag="3" identifier="vordiplom" id="9B2-MQ-u7Y"/>
+                                                                    <menuItem title="Pastel" tag="4" identifier="pastel" id="6Xa-PA-CTs"/>
+                                                                    <menuItem title="Material" tag="5" identifier="material" id="q1f-K3-ymD"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                </gridCell>
+                                                <gridCell row="3KM-3k-d8g" column="L44-T8-c3q" id="6p4-U7-Dxt">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-cj-dEN">
+                                                        <rect key="frame" x="-2" y="2" width="182" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="MUJI Baumkuchen divisions: " id="WnR-Zd-4hh">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="3KM-3k-d8g" column="G7P-oG-cOU" id="pld-nQ-NDS">
+                                                    <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-Pl-21i">
+                                                        <rect key="frame" x="180" y="0.0" width="100" height="22"/>
+                                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="tyw-QG-tF0">
+                                                            <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="CDE-0U-pbM">
+                                                                <real key="minimum" value="1"/>
+                                                                <real key="maximum" value="12"/>
+                                                            </numberFormatter>
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                            </gridCells>
+                                        </gridView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GiA-Xn-S2j" firstAttribute="centerX" secondItem="wTa-fj-pmv" secondAttribute="centerX" id="WWB-nU-bDv"/>
+                                        <constraint firstItem="GiA-Xn-S2j" firstAttribute="centerY" secondItem="wTa-fj-pmv" secondAttribute="centerY" id="jxa-50-hMY"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uEo-9t-bvZ" firstAttribute="top" secondItem="McT-00-GL3" secondAttribute="top" constant="20" id="6gU-3v-dzt"/>
+                            <constraint firstAttribute="bottom" secondItem="uEo-9t-bvZ" secondAttribute="bottom" constant="20" id="8i3-zC-7yN"/>
+                            <constraint firstItem="uEo-9t-bvZ" firstAttribute="leading" secondItem="McT-00-GL3" secondAttribute="leading" constant="20" id="Xs6-oH-SPm"/>
+                            <constraint firstAttribute="trailing" secondItem="uEo-9t-bvZ" secondAttribute="trailing" constant="20" id="wb2-Om-GQo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartColorTemplatePopUp" destination="ibk-9Q-0xd" id="KZl-7X-9TO"/>
+                        <outlet property="divisionField" destination="tyw-QG-tF0" id="Vo7-b4-Hl0"/>
+                        <outlet property="jetsonIPText" destination="Ah7-48-abK" id="5eY-YM-OK7"/>
+                    </connections>
+                </viewController>
+                <customObject id="MJg-Bh-l4G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="325"/>
+        </scene>
+        <!--FAIRCUT-->
+        <scene sceneID="DRD-dM-Qhq">
+            <objects>
+                <viewController title="FAIRCUT" id="ZX5-KI-cdU" sceneMemberID="viewController">
+                    <containerView key="view" id="2td-dE-QyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <segue destination="xZo-Zg-AbP" kind="embed" id="dqK-H0-Mx8"/>
+                        </connections>
+                    </containerView>
+                </viewController>
+                <customObject id="ogD-21-fTq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="887"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="7jM-aT-asz">
+            <objects>
+                <viewController id="xZo-Zg-AbP" customClass="HomeViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="l18-wB-KSi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uTo-Iz-1yp">
+                                <rect key="frame" x="20" y="134" width="560" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="a74-OB-z2I"/>
+                                    <constraint firstAttribute="height" constant="204" id="j8X-iZ-7N0"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="LogoType" id="Ttr-du-Wkk"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4SO-1j-RZN">
+                                <rect key="frame" x="245" y="46" width="110" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DL6-a6-63d"/>
+                                    <constraint firstAttribute="width" constant="110" id="UZD-v9-A2D"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="StartType" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eHn-s3-Akt">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="o5n-kU-SJf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="4SO-1j-RZN" firstAttribute="centerX" secondItem="l18-wB-KSi" secondAttribute="centerX" id="Jla-aP-JNP"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4SO-1j-RZN" secondAttribute="bottom" constant="47" id="TCp-Da-XYM"/>
+                            <constraint firstItem="uTo-Iz-1yp" firstAttribute="centerX" secondItem="l18-wB-KSi" secondAttribute="centerX" id="VkG-Q0-9Bz"/>
+                            <constraint firstItem="4SO-1j-RZN" firstAttribute="top" secondItem="uTo-Iz-1yp" secondAttribute="bottom" constant="47" id="cSa-Av-g4C"/>
+                            <constraint firstItem="uTo-Iz-1yp" firstAttribute="centerY" secondItem="l18-wB-KSi" secondAttribute="centerY" constant="-36" id="uBs-FS-DHn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="eHn-s3-Akt" id="Ogn-en-HNw"/>
+                    </connections>
+                </viewController>
+                <customObject id="Hha-kQ-h9V" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="1405"/>
+        </scene>
+        <!--Capture View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="CaptureViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box title="Preview" translatesAutoresizingMaskIntoConstraints="NO" id="MrG-Ft-mY8">
+                                <rect key="frame" x="17" y="57" width="566" height="323"/>
+                                <view key="contentView" id="YDc-sN-lVJ">
+                                    <rect key="frame" x="3" y="3" width="560" height="305"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cez-cU-FKg">
+                                            <rect key="frame" x="0.0" y="-7" width="560" height="319"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="BlO-lZ-Pax"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aHi-Ep-stT">
+                                <rect key="frame" x="528" y="13" width="58" height="32"/>
+                                <buttonCell key="cell" type="push" title="Go" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hYN-EB-vHk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onNextButton:" target="XfG-lQ-9wD" id="LWe-1y-1kq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="awS-pV-Nkt">
+                                <rect key="frame" x="14" y="13" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XJ2-dC-ePa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onPrevButton:" target="XfG-lQ-9wD" id="iih-hK-uy2"/>
+                                    <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="lrT-JH-Fkn"/>
+                                </connections>
+                            </button>
+                            <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xZ6-i8-ydi">
+                                <rect key="frame" x="498" y="22" width="16" height="16"/>
+                            </progressIndicator>
+                            <textField hidden="YES" canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-Wk-RsT">
+                                <rect key="frame" x="488" y="22" width="4" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="bHL-6v-oXS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aHi-Ep-stT" firstAttribute="leading" secondItem="xZ6-i8-ydi" secondAttribute="trailing" constant="20" id="A6N-LS-MKV"/>
+                            <constraint firstItem="MrG-Ft-mY8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="J3D-ns-HZy"/>
+                            <constraint firstAttribute="bottom" secondItem="aHi-Ep-stT" secondAttribute="bottom" constant="20" id="MW5-8x-3jQ"/>
+                            <constraint firstItem="xZ6-i8-ydi" firstAttribute="leading" secondItem="4AX-Wk-RsT" secondAttribute="trailing" constant="8" id="Xbo-6h-6Cf"/>
+                            <constraint firstAttribute="trailing" secondItem="MrG-Ft-mY8" secondAttribute="trailing" constant="20" id="b5w-lp-k90"/>
+                            <constraint firstAttribute="bottom" secondItem="xZ6-i8-ydi" secondAttribute="bottom" constant="22" id="g1i-er-CuO"/>
+                            <constraint firstItem="MrG-Ft-mY8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="lG9-FI-Gp7"/>
+                            <constraint firstAttribute="bottom" secondItem="4AX-Wk-RsT" secondAttribute="bottom" constant="22" id="ly7-dc-7sr"/>
+                            <constraint firstAttribute="trailing" secondItem="aHi-Ep-stT" secondAttribute="trailing" constant="20" id="q1O-O1-0E1"/>
+                            <constraint firstItem="awS-pV-Nkt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="uO4-T5-mVO"/>
+                            <constraint firstItem="aHi-Ep-stT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="awS-pV-Nkt" secondAttribute="trailing" constant="456" id="vBT-Es-pDX"/>
+                            <constraint firstItem="aHi-Ep-stT" firstAttribute="top" secondItem="MrG-Ft-mY8" secondAttribute="bottom" constant="20" id="vFK-LK-zn2"/>
+                            <constraint firstAttribute="bottom" secondItem="awS-pV-Nkt" secondAttribute="bottom" constant="20" id="xCI-2A-tlJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CaptureView" destination="cez-cU-FKg" id="V9P-Jd-AFp"/>
+                        <outlet property="backButton" destination="awS-pV-Nkt" id="4UU-Xa-BtX"/>
+                        <outlet property="jetsonProgress" destination="xZ6-i8-ydi" id="JiW-Gi-RGs"/>
+                        <outlet property="messageLabel" destination="4AX-Wk-RsT" id="tFX-Sf-GVx"/>
+                        <outlet property="nextButton" destination="aHi-Ep-stT" id="Yvi-mH-Tf1"/>
+                        <segue destination="xag-L1-0U6" kind="custom" identifier="SegueCapture2Chart" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="anp-Hs-Pb1"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="1405"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="AbJ-yh-BCJ">
+            <objects>
+                <viewController title="Chart View Controller" id="xag-L1-0U6" customClass="ChartViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Kfe-T6-sTP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ">
+                                <rect key="frame" x="20" y="61" width="560" height="319"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="40n-Yx-hHP" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="319"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                    <customView id="l5X-e8-z4I" customClass="NSScrollView">
+                                        <rect key="frame" x="279" y="0.0" width="281" height="319"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="30" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-03-9wb">
+                                                <rect key="frame" x="0.0" y="0.0" width="281" height="319"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cVs-03-9wb" secondAttribute="bottom" id="8IJ-n5-nfi"/>
+                                            <constraint firstItem="cVs-03-9wb" firstAttribute="top" secondItem="l5X-e8-z4I" secondAttribute="top" id="CoI-E8-dk4"/>
+                                            <constraint firstItem="cVs-03-9wb" firstAttribute="leading" secondItem="l5X-e8-z4I" secondAttribute="leading" id="WZg-d3-eWb"/>
+                                            <constraint firstAttribute="trailing" secondItem="cVs-03-9wb" secondAttribute="trailing" id="gUT-7V-D0a"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="251"/>
+                                </holdingPriorities>
+                            </splitView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-0F-czg">
+                                <rect key="frame" x="510" y="13" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="Finish" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I1k-Rr-hOh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="QH5-sF-hj5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uQD-Hj-6nJ" firstAttribute="top" secondItem="Kfe-T6-sTP" secondAttribute="top" constant="20" id="0vf-Lu-e9Z"/>
+                            <constraint firstItem="sGU-0F-czg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="516" id="6ZO-Iz-pZ3"/>
+                            <constraint firstItem="sGU-0F-czg" firstAttribute="top" secondItem="uQD-Hj-6nJ" secondAttribute="bottom" constant="20" id="Fth-JT-Fok"/>
+                            <constraint firstItem="uQD-Hj-6nJ" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="b2Z-Fz-T7P"/>
+                            <constraint firstAttribute="trailing" secondItem="uQD-Hj-6nJ" secondAttribute="trailing" constant="20" id="lRX-gQ-YPb"/>
+                            <constraint firstAttribute="trailing" secondItem="sGU-0F-czg" secondAttribute="trailing" constant="20" id="mrG-jv-Ouh"/>
+                            <constraint firstAttribute="bottom" secondItem="sGU-0F-czg" secondAttribute="bottom" constant="20" id="yKn-DZ-Cuh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="faceScrollView" destination="l5X-e8-z4I" id="35S-w0-6cf"/>
+                        <outlet property="faceStackView" destination="cVs-03-9wb" id="krd-nR-mMn"/>
+                        <outlet property="finishButton" destination="sGU-0F-czg" id="8ju-As-txu"/>
+                        <outlet property="pieChartView" destination="40n-Yx-hHP" id="d0p-9C-utg"/>
+                    </connections>
+                </viewController>
+                <customObject id="Hkf-MG-0AT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067" y="1405"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoType" width="1580" height="270"/>
+        <image name="StartType" width="600" height="200"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dqK-H0-Mx8"/>
+        <segue reference="bID-JB-ZjH"/>
+    </inferredMetricsTieBreakers>
+</document>

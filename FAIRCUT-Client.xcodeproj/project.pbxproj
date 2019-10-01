@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F4681D022DC3F4F00F79636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4681CF22DC3F4F00F79636 /* AppDelegate.swift */; };
+		2F4681D222DC3F4F00F79636 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4681D122DC3F4F00F79636 /* CaptureViewController.swift */; };
+		2F4681D422DC3F5100F79636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4681D322DC3F5100F79636 /* Assets.xcassets */; };
+		2F4681D722DC3F5100F79636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4681D522DC3F5100F79636 /* Main.storyboard */; };
+		2F4681E022DC40C200F79636 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4681DF22DC40C200F79636 /* CameraManager.swift */; };
+		2F65C58B22E05AFF00C7BD3A /* SystemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65C58A22E05AFF00C7BD3A /* SystemExtensions.swift */; };
+		2F65C58D22E0C62D00C7BD3A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65C58C22E0C62D00C7BD3A /* HomeViewController.swift */; };
+		2F65C58F22E0CE4900C7BD3A /* SlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65C58E22E0CE4900C7BD3A /* SlideSegue.swift */; };
+		2FCEEF9D22EBB17100243F26 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCEEF9C22EBB17100243F26 /* PreferencesViewController.swift */; };
+		2FDB2B8422E056A700655C44 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2FDB2B8322E056A700655C44 /* Podfile */; };
+		2FDB5C4222E94E8500BB3B7D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB5C4122E94E8500BB3B7D /* ChartViewController.swift */; };
+		B4D78CDFFE95CEBCD0F24923 /* Pods_FAIRCUT_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0790C0CBC68291EB494AD834 /* Pods_FAIRCUT_Client.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0790C0CBC68291EB494AD834 /* Pods_FAIRCUT_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAIRCUT_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4681CC22DC3F4F00F79636 /* FAIRCUT-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FAIRCUT-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F4681CF22DC3F4F00F79636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2F4681D122DC3F4F00F79636 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		2F4681D322DC3F5100F79636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F4681D622DC3F5100F79636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F4681D822DC3F5100F79636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F4681D922DC3F5100F79636 /* FAIRCUT_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FAIRCUT_Client.entitlements; sourceTree = "<group>"; };
+		2F4681DF22DC40C200F79636 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		2F4681E122DC6CA300F79636 /* FAIRCUT-Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FAIRCUT-Client.entitlements"; sourceTree = "<group>"; };
+		2F65C58A22E05AFF00C7BD3A /* SystemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemExtensions.swift; sourceTree = "<group>"; };
+		2F65C58C22E0C62D00C7BD3A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2F65C58E22E0CE4900C7BD3A /* SlideSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideSegue.swift; sourceTree = "<group>"; };
+		2FCEEF9C22EBB17100243F26 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		2FDB2B8322E056A700655C44 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2FDB5C4122E94E8500BB3B7D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		46E9A85EBB6B9071E1A672E3 /* Pods-FAIRCUT-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FAIRCUT-Client.debug.xcconfig"; path = "Target Support Files/Pods-FAIRCUT-Client/Pods-FAIRCUT-Client.debug.xcconfig"; sourceTree = "<group>"; };
+		AF9C34DAB0F9BA6B9DC2EC0A /* Pods-FAIRCUT-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FAIRCUT-Client.release.xcconfig"; path = "Target Support Files/Pods-FAIRCUT-Client/Pods-FAIRCUT-Client.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F4681C922DC3F4F00F79636 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D78CDFFE95CEBCD0F24923 /* Pods_FAIRCUT_Client.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F4681C322DC3F4F00F79636 = {
+			isa = PBXGroup;
+			children = (
+				2F4681CE22DC3F4F00F79636 /* FAIRCUT-Client */,
+				2F4681CD22DC3F4F00F79636 /* Products */,
+				968197814BCA35B6C2711471 /* Pods */,
+				A35F013EEB4A302E6B440913 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2F4681CD22DC3F4F00F79636 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F4681CC22DC3F4F00F79636 /* FAIRCUT-Client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F4681CE22DC3F4F00F79636 /* FAIRCUT-Client */ = {
+			isa = PBXGroup;
+			children = (
+				2FDB2B8322E056A700655C44 /* Podfile */,
+				2F4681E122DC6CA300F79636 /* FAIRCUT-Client.entitlements */,
+				2F4681CF22DC3F4F00F79636 /* AppDelegate.swift */,
+				2FDB5C4622EA17E400BB3B7D /* View Controllers */,
+				2F65C58A22E05AFF00C7BD3A /* SystemExtensions.swift */,
+				2F4681DF22DC40C200F79636 /* CameraManager.swift */,
+				2F65C58E22E0CE4900C7BD3A /* SlideSegue.swift */,
+				2F4681D522DC3F5100F79636 /* Main.storyboard */,
+				2F4681D322DC3F5100F79636 /* Assets.xcassets */,
+				2F4681D822DC3F5100F79636 /* Info.plist */,
+				2F4681D922DC3F5100F79636 /* FAIRCUT_Client.entitlements */,
+			);
+			path = "FAIRCUT-Client";
+			sourceTree = "<group>";
+		};
+		2FDB5C4622EA17E400BB3B7D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F65C58C22E0C62D00C7BD3A /* HomeViewController.swift */,
+				2F4681D122DC3F4F00F79636 /* CaptureViewController.swift */,
+				2FDB5C4122E94E8500BB3B7D /* ChartViewController.swift */,
+				2FCEEF9C22EBB17100243F26 /* PreferencesViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		968197814BCA35B6C2711471 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46E9A85EBB6B9071E1A672E3 /* Pods-FAIRCUT-Client.debug.xcconfig */,
+				AF9C34DAB0F9BA6B9DC2EC0A /* Pods-FAIRCUT-Client.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A35F013EEB4A302E6B440913 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0790C0CBC68291EB494AD834 /* Pods_FAIRCUT_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F4681CB22DC3F4F00F79636 /* FAIRCUT-Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F4681DC22DC3F5100F79636 /* Build configuration list for PBXNativeTarget "FAIRCUT-Client" */;
+			buildPhases = (
+				1C6F50FC33ED46A3D8EA8A04 /* [CP] Check Pods Manifest.lock */,
+				2F4681C822DC3F4F00F79636 /* Sources */,
+				2F4681C922DC3F4F00F79636 /* Frameworks */,
+				2F4681CA22DC3F4F00F79636 /* Resources */,
+				C9EAE0CB5511FE21475A831D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FAIRCUT-Client";
+			productName = "FAIRCUT-Client";
+			productReference = 2F4681CC22DC3F4F00F79636 /* FAIRCUT-Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F4681C422DC3F4F00F79636 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = NITMakers;
+				TargetAttributes = {
+					2F4681CB22DC3F4F00F79636 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2F4681C722DC3F4F00F79636 /* Build configuration list for PBXProject "FAIRCUT-Client" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F4681C322DC3F4F00F79636;
+			productRefGroup = 2F4681CD22DC3F4F00F79636 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F4681CB22DC3F4F00F79636 /* FAIRCUT-Client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F4681CA22DC3F4F00F79636 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FDB2B8422E056A700655C44 /* Podfile in Resources */,
+				2F4681D422DC3F5100F79636 /* Assets.xcassets in Resources */,
+				2F4681D722DC3F5100F79636 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C6F50FC33ED46A3D8EA8A04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FAIRCUT-Client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9EAE0CB5511FE21475A831D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FAIRCUT-Client/Pods-FAIRCUT-Client-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FAIRCUT-Client/Pods-FAIRCUT-Client-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FAIRCUT-Client/Pods-FAIRCUT-Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F4681C822DC3F4F00F79636 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F65C58D22E0C62D00C7BD3A /* HomeViewController.swift in Sources */,
+				2FDB5C4222E94E8500BB3B7D /* ChartViewController.swift in Sources */,
+				2F4681D222DC3F4F00F79636 /* CaptureViewController.swift in Sources */,
+				2FCEEF9D22EBB17100243F26 /* PreferencesViewController.swift in Sources */,
+				2F4681E022DC40C200F79636 /* CameraManager.swift in Sources */,
+				2F65C58F22E0CE4900C7BD3A /* SlideSegue.swift in Sources */,
+				2F65C58B22E05AFF00C7BD3A /* SystemExtensions.swift in Sources */,
+				2F4681D022DC3F4F00F79636 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2F4681D522DC3F5100F79636 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F4681D622DC3F5100F79636 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F4681DA22DC3F5100F79636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F4681DB22DC3F5100F79636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2F4681DD22DC3F5100F79636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E9A85EBB6B9071E1A672E3 /* Pods-FAIRCUT-Client.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FAIRCUT-Client/FAIRCUT-Client.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5V5RV7SH4L;
+				INFOPLIST_FILE = "FAIRCUT-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bit-plus.make.FAIRCUT-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2F4681DE22DC3F5100F79636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF9C34DAB0F9BA6B9DC2EC0A /* Pods-FAIRCUT-Client.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FAIRCUT-Client/FAIRCUT-Client.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5V5RV7SH4L;
+				INFOPLIST_FILE = "FAIRCUT-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bit-plus.make.FAIRCUT-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F4681C722DC3F4F00F79636 /* Build configuration list for PBXProject "FAIRCUT-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F4681DA22DC3F5100F79636 /* Debug */,
+				2F4681DB22DC3F5100F79636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F4681DC22DC3F5100F79636 /* Build configuration list for PBXNativeTarget "FAIRCUT-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F4681DD22DC3F5100F79636 /* Debug */,
+				2F4681DE22DC3F5100F79636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F4681C422DC3F4F00F79636 /* Project object */;
+}
