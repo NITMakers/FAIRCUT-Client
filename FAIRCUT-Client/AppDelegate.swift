@@ -16,9 +16,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        UserDefaults.standard.set(String("10.10.10.11"), forKey: "JetsonIPAddress")
+        //UserDefaults.standard.set(String("10.10.10.11"), forKey: "JetsonIPAddress")
+        UserDefaults.standard.set(String("192.168.0.10"), forKey: "JetsonIPAddress")
         UserDefaults.standard.set(String("colorful"), forKey: "ChartColorTemplate")
-        UserDefaults.standard.set(Int(6), forKey: "MUJIDivision")
+        UserDefaults.standard.set(Int(542), forKey: "TotalCalories")
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

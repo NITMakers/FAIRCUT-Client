@@ -9,7 +9,7 @@
 import Cocoa
 //import AVFoundation
 
-class HomeViewController: NSViewController {
+class HomeViewController: NSViewController, NSWindowDelegate {
     
     @IBOutlet weak var startButton: NSButtonCell!
     let speechSynth = NSSpeechSynthesizer()
@@ -23,12 +23,21 @@ class HomeViewController: NSViewController {
         startButton.keyEquivalent = String(utf16CodeUnits: [unichar(NSCarriageReturnCharacter)], count: 1)
     }
     
+    override func viewDidAppear() {
+        self.view.window?.delegate = self
+    }
+    
     override func viewWillAppear() {
         speechSynth.startSpeaking("Hello, user. I'm glad to see you.")
     }
     
     override func viewWillDisappear() {
         speechSynth.stopSpeaking()
+    }
+    
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApplication.shared.terminate(self)
+        return true
     }
     
 }

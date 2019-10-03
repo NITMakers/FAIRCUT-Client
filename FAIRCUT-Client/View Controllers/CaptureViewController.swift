@@ -11,7 +11,7 @@ import AVFoundation
 import Foundation
 import Starscream
 
-class CaptureViewController: NSViewController {
+class CaptureViewController: NSViewController, NSWindowDelegate {
     
     @IBOutlet weak var CaptureView: NSImageView!
     @IBOutlet weak var messageLabel: NSTextField!
@@ -42,12 +42,16 @@ class CaptureViewController: NSViewController {
         backButton.keyEquivalent = String(utf16CodeUnits: [unichar(NSBackspaceCharacter)], count: 1)
     }
     
+    override func viewDidAppear() {
+        self.view.window?.delegate = self
+    }
+    
     override func viewWillAppear() {
         CameraManager.shared.startSession(delegate: self)
         
         if socket.isConnected {
             messageLabel.isHidden = true
-            speechSynth.startSpeaking("Please capture your face for detecting.")
+            speechSynth.startSpeaking("Please capture your face for predicting.")
         }else{
             messageLabel.isHidden = false
             messageLabel.stringValue = "Failed to establish a connection."
@@ -68,6 +72,11 @@ class CaptureViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApplication.shared.terminate(self)
+        return true
     }
     
     @IBAction func onPrevButton(_ sender: Any) {

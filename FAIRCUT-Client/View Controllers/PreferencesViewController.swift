@@ -15,7 +15,7 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var chartColorTemplatePopUp: NSPopUpButton!
     
-    @IBOutlet weak var divisionField: NSTextFieldCell!
+    @IBOutlet weak var totalCalorieField: NSTextFieldCell!
     
     
     override func viewDidLoad() {
@@ -26,14 +26,14 @@ class PreferencesViewController: NSViewController {
     
     override func viewWillAppear() {
         jetsonIPText.stringValue = String(UserDefaults.standard.object(forKey: "JetsonIPAddress") as! String)
-        divisionField.intValue = Int32(UserDefaults.standard.integer(forKey: "MUJIDivision"))
+        totalCalorieField.intValue = Int32(UserDefaults.standard.integer(forKey: "TotalCalories"))
     }
     
     override func viewWillDisappear() {
         UserDefaults.standard.set(jetsonIPText.stringValue, forKey: "JetsonIPAddress")
         let colorTemplateString = chartColorTemplatePopUp.titleOfSelectedItem?.lowercased()
         UserDefaults.standard.set(colorTemplateString, forKey: "ChartColorTemplate")
-        UserDefaults.standard.set(Int(divisionField.intValue), forKey: "MUJIDivision")
+        UserDefaults.standard.set(Int(totalCalorieField.intValue), forKey: "TotalCalories")
     }
     
 }

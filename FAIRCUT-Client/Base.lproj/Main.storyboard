@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZX5-KI-cdU">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZX5-KI-cdU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,6 +55,74 @@
                                         <menuItem title="Quit FAIRCUT-Client" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="File" id="Mmu-hE-gVa" userLabel="File">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="pbM-Ky-7Gg">
+                                    <items>
+                                        <menuItem title="Close" keyEquivalent="w" id="2BF-HD-aGe">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="RLO-os-Doa"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Qfb-Ym-D3B"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Edit" id="YQA-8g-BMe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="jH8-87-syi">
+                                    <items>
+                                        <menuItem title="Undo" keyEquivalent="z" id="YcC-HA-jLl">
+                                            <connections>
+                                                <action selector="undo:" target="Ady-hI-5gd" id="EGP-Fg-Jdf"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="anj-vY-SbQ"/>
+                                        <menuItem title="Cut" keyEquivalent="x" id="GDn-s9-aQo">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="FL6-RV-86s"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="aMg-aP-Nfi">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="Bbf-Tp-Iqt"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="7LM-zj-1Fv">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="Wv1-l3-MD1"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Delete" id="Zrh-zQ-zFR">
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                            <connections>
+                                                <action selector="delete:" target="Ady-hI-5gd" id="jqB-vy-czO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="2fI-0t-bqX"/>
+                                        <menuItem title="Select All" keyEquivalent="a" id="uIM-W5-HVk">
+                                            <connections>
+                                                <action selector="selectAll:" target="Ady-hI-5gd" id="kKl-qj-D1G"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="W4r-db-bIE">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="CSv-AM-ZGB">
+                                    <items>
+                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="sUf-fH-0X9">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="iGa-42-HIN"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -134,8 +203,8 @@
         <scene sceneID="aBw-p7-oqO">
             <objects>
                 <windowController id="a6j-H3-FLh" sceneMemberID="viewController">
-                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="cWR-ea-neS">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="FAIRCUT Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="cWR-ea-neS">
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -151,22 +220,22 @@
             </objects>
             <point key="canvasLocation" x="878" y="350"/>
         </scene>
-        <!--Preferences View Controller-->
+        <!--FAIRCUT Preferences-->
         <scene sceneID="Vc4-o5-iLm">
             <objects>
-                <viewController id="n21-eq-wdw" customClass="PreferencesViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FAIRCUT Preferences" id="n21-eq-wdw" customClass="PreferencesViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="McT-00-GL3">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box title="FAIRCUT-Client settings" translatesAutoresizingMaskIntoConstraints="NO" id="uEo-9t-bvZ">
+                            <box title="FAIRCUT-Client Preferences" translatesAutoresizingMaskIntoConstraints="NO" id="uEo-9t-bvZ">
                                 <rect key="frame" x="17" y="16" width="446" height="234"/>
                                 <view key="contentView" id="wTa-fj-pmv">
                                     <rect key="frame" x="3" y="3" width="440" height="216"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <gridView xPlacement="trailing" yPlacement="center" rowAlignment="none" rowSpacing="10" columnSpacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-Xn-S2j">
-                                            <rect key="frame" x="80" y="66" width="280" height="85"/>
+                                            <rect key="frame" x="54" y="67" width="333" height="83"/>
                                             <rows>
                                                 <gridRow id="nW7-Ki-Oh1"/>
                                                 <gridRow id="phW-cL-KMM"/>
@@ -179,7 +248,7 @@
                                             <gridCells>
                                                 <gridCell row="nW7-Ki-Oh1" column="L44-T8-c3q" id="fO9-nz-QME">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-Su-R5T">
-                                                        <rect key="frame" x="60" y="65" width="120" height="17"/>
+                                                        <rect key="frame" x="113" y="64" width="120" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Server IP Address: " id="di0-gu-RTy">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -189,7 +258,7 @@
                                                 </gridCell>
                                                 <gridCell row="nW7-Ki-Oh1" column="G7P-oG-cOU" id="FwG-Ft-nj7">
                                                     <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-48-abK">
-                                                        <rect key="frame" x="180" y="63" width="100" height="22"/>
+                                                        <rect key="frame" x="233" y="62" width="100" height="21"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="DS2-JC-6Od">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -199,7 +268,7 @@
                                                 </gridCell>
                                                 <gridCell row="phW-cL-KMM" column="L44-T8-c3q" id="CgA-eg-8BT">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-3V-66C">
-                                                        <rect key="frame" x="43" y="34" width="137" height="17"/>
+                                                        <rect key="frame" x="96" y="33" width="137" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Chart color template: " id="yE4-1n-uZk">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -209,7 +278,7 @@
                                                 </gridCell>
                                                 <gridCell row="phW-cL-KMM" column="G7P-oG-cOU" id="hDw-ru-7BE">
                                                     <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-9Q-0xd">
-                                                        <rect key="frame" x="183" y="29" width="100" height="25"/>
+                                                        <rect key="frame" x="236" y="28" width="100" height="25"/>
                                                         <popUpButtonCell key="cell" type="push" title="Colorful" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ciA-dV-rib" id="PVo-yg-w3B">
                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="menu"/>
@@ -228,8 +297,8 @@
                                                 </gridCell>
                                                 <gridCell row="3KM-3k-d8g" column="L44-T8-c3q" id="6p4-U7-Dxt">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-cj-dEN">
-                                                        <rect key="frame" x="-2" y="2" width="182" height="17"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="MUJI Baumkuchen divisions: " id="WnR-Zd-4hh">
+                                                        <rect key="frame" x="-2" y="2" width="235" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Heat value of the baumkuchen in kcal:" id="WnR-Zd-4hh">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -238,8 +307,8 @@
                                                 </gridCell>
                                                 <gridCell row="3KM-3k-d8g" column="G7P-oG-cOU" id="pld-nQ-NDS">
                                                     <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-Pl-21i">
-                                                        <rect key="frame" x="180" y="0.0" width="100" height="22"/>
-                                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="tyw-QG-tF0">
+                                                        <rect key="frame" x="233" y="0.0" width="100" height="21"/>
+                                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="tyw-QG-tF0" userLabel="Total Calorie Field">
                                                             <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="CDE-0U-pbM">
                                                                 <real key="minimum" value="1"/>
                                                                 <real key="maximum" value="12"/>
@@ -271,6 +340,7 @@
                         <outlet property="chartColorTemplatePopUp" destination="ibk-9Q-0xd" id="KZl-7X-9TO"/>
                         <outlet property="divisionField" destination="tyw-QG-tF0" id="Vo7-b4-Hl0"/>
                         <outlet property="jetsonIPText" destination="Ah7-48-abK" id="5eY-YM-OK7"/>
+                        <outlet property="totalCalorieField" destination="tyw-QG-tF0" id="TVe-50-TX9"/>
                     </connections>
                 </viewController>
                 <customObject id="MJg-Bh-l4G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -387,7 +457,7 @@
                                 <rect key="frame" x="498" y="22" width="16" height="16"/>
                             </progressIndicator>
                             <textField hidden="YES" canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-Wk-RsT">
-                                <rect key="frame" x="488" y="22" width="4" height="17"/>
+                                <rect key="frame" x="488" y="22" width="4" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="bHL-6v-oXS">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -432,32 +502,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ">
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ" customClass="ParentView" customModule="FAIRCUT_Client" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="560" height="319"/>
                                 <subviews>
-                                    <customView fixedFrame="YES" id="40n-Yx-hHP" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="319"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </customView>
-                                    <customView id="l5X-e8-z4I" customClass="NSScrollView">
-                                        <rect key="frame" x="279" y="0.0" width="281" height="319"/>
+                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" id="vfk-1C-k2S">
+                                        <rect key="frame" x="0.0" y="0.0" width="419" height="319"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" spacing="30" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-03-9wb">
-                                                <rect key="frame" x="0.0" y="0.0" width="281" height="319"/>
+                                            <customView autoresizesSubviews="NO" misplaced="YES" id="rDv-51-JlQ" userLabel="Face Scroll View 2" customClass="NSScrollView">
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="319"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <stackView orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-DY-gTS" userLabel="Face Stack View 2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="319"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="j4h-DY-gTS" firstAttribute="leading" secondItem="rDv-51-JlQ" secondAttribute="leading" id="0XN-z4-wH6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="j4h-DY-gTS" secondAttribute="bottom" id="460-GN-lgg"/>
+                                                    <constraint firstItem="j4h-DY-gTS" firstAttribute="top" secondItem="rDv-51-JlQ" secondAttribute="top" id="YIy-wi-wOd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j4h-DY-gTS" secondAttribute="trailing" id="k7P-tb-uFR"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView fixedFrame="YES" id="40n-Yx-hHP" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="145" y="0.0" width="274" height="319"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </customView>
+                                        </subviews>
+                                        <holdingPriorities>
+                                            <real value="350"/>
+                                            <real value="250"/>
+                                        </holdingPriorities>
+                                    </splitView>
+                                    <customView autoresizesSubviews="NO" misplaced="YES" id="l5X-e8-z4I" userLabel="Face Scroll View 1" customClass="NSScrollView">
+                                        <rect key="frame" x="420" y="0.0" width="140" height="319"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <stackView orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-03-9wb" userLabel="Face Stack View 1">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="319"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="cVs-03-9wb" secondAttribute="bottom" id="8IJ-n5-nfi"/>
-                                            <constraint firstItem="cVs-03-9wb" firstAttribute="top" secondItem="l5X-e8-z4I" secondAttribute="top" id="CoI-E8-dk4"/>
-                                            <constraint firstItem="cVs-03-9wb" firstAttribute="leading" secondItem="l5X-e8-z4I" secondAttribute="leading" id="WZg-d3-eWb"/>
-                                            <constraint firstAttribute="trailing" secondItem="cVs-03-9wb" secondAttribute="trailing" id="gUT-7V-D0a"/>
+                                            <constraint firstItem="cVs-03-9wb" firstAttribute="top" secondItem="l5X-e8-z4I" secondAttribute="top" id="4L7-Mq-rkC"/>
+                                            <constraint firstAttribute="trailing" secondItem="cVs-03-9wb" secondAttribute="trailing" id="C8t-N0-FwM"/>
+                                            <constraint firstItem="cVs-03-9wb" firstAttribute="leading" secondItem="l5X-e8-z4I" secondAttribute="leading" id="kDh-mD-INE"/>
+                                            <constraint firstAttribute="bottom" secondItem="cVs-03-9wb" secondAttribute="bottom" id="wtk-ud-Kh6"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
                                     <real value="250"/>
-                                    <real value="251"/>
+                                    <real value="350"/>
                                 </holdingPriorities>
                             </splitView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-0F-czg">
@@ -470,21 +565,39 @@
                                     <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="QH5-sF-hj5"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SsQ-Kh-QDs">
+                                <rect key="frame" x="14" y="13" width="80" height="32"/>
+                                <buttonCell key="cell" type="push" title="Print..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0nm-dx-Ksf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">p</string>
+                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onPrintButtonPressed:" target="xag-L1-0U6" id="zql-uv-GaS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="uQD-Hj-6nJ" firstAttribute="top" secondItem="Kfe-T6-sTP" secondAttribute="top" constant="20" id="0vf-Lu-e9Z"/>
                             <constraint firstItem="sGU-0F-czg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="516" id="6ZO-Iz-pZ3"/>
                             <constraint firstItem="sGU-0F-czg" firstAttribute="top" secondItem="uQD-Hj-6nJ" secondAttribute="bottom" constant="20" id="Fth-JT-Fok"/>
+                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="Uwu-h7-7c5"/>
                             <constraint firstItem="uQD-Hj-6nJ" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="b2Z-Fz-T7P"/>
                             <constraint firstAttribute="trailing" secondItem="uQD-Hj-6nJ" secondAttribute="trailing" constant="20" id="lRX-gQ-YPb"/>
                             <constraint firstAttribute="trailing" secondItem="sGU-0F-czg" secondAttribute="trailing" constant="20" id="mrG-jv-Ouh"/>
+                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="top" secondItem="uQD-Hj-6nJ" secondAttribute="bottom" constant="20" id="rZ3-f3-Rkt"/>
+                            <constraint firstAttribute="bottom" secondItem="SsQ-Kh-QDs" secondAttribute="bottom" constant="20" id="sDr-Xb-LGN"/>
                             <constraint firstAttribute="bottom" secondItem="sGU-0F-czg" secondAttribute="bottom" constant="20" id="yKn-DZ-Cuh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="faceScrollView" destination="l5X-e8-z4I" id="35S-w0-6cf"/>
-                        <outlet property="faceStackView" destination="cVs-03-9wb" id="krd-nR-mMn"/>
+                        <outlet property="faceScrollView1" destination="l5X-e8-z4I" id="DIe-4d-amz"/>
+                        <outlet property="faceScrollView2" destination="rDv-51-JlQ" id="fGu-x5-tBM"/>
+                        <outlet property="faceStackView1" destination="cVs-03-9wb" id="lUm-6D-Ujn"/>
+                        <outlet property="faceStackView2" destination="j4h-DY-gTS" id="4o1-sd-VgA"/>
                         <outlet property="finishButton" destination="sGU-0F-czg" id="8ju-As-txu"/>
+                        <outlet property="parentView" destination="uQD-Hj-6nJ" id="ADw-Cj-own"/>
                         <outlet property="pieChartView" destination="40n-Yx-hHP" id="d0p-9C-utg"/>
                     </connections>
                 </viewController>
@@ -498,7 +611,7 @@
         <image name="StartType" width="600" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dqK-H0-Mx8"/>
-        <segue reference="bID-JB-ZjH"/>
+        <segue reference="QH5-sF-hj5"/>
+        <segue reference="7gq-uU-rXY"/>
     </inferredMetricsTieBreakers>
 </document>

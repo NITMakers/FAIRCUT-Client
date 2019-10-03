@@ -34,7 +34,7 @@ extension NSImage {
             .map {
                 // additional begin
                 var faceRect = $0.bounds
-                let expansionSize: CGFloat = 100.0
+                let expansionSize: CGFloat = 60.0
                 faceRect.origin.x = faceRect.origin.x - expansionSize
                 faceRect.origin.y = faceRect.origin.y - expansionSize
                 faceRect.size.width = faceRect.size.width + expansionSize * 2
