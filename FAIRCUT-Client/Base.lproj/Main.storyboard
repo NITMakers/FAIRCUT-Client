@@ -502,7 +502,7 @@ CA
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ" customClass="ParentView" customModule="FAIRCUT_Client" customModuleProvider="target">
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ">
                                 <rect key="frame" x="20" y="61" width="560" height="319"/>
                                 <subviews>
                                     <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" id="vfk-1C-k2S">
@@ -597,7 +597,7 @@ CA
                         <outlet property="faceStackView1" destination="cVs-03-9wb" id="lUm-6D-Ujn"/>
                         <outlet property="faceStackView2" destination="j4h-DY-gTS" id="4o1-sd-VgA"/>
                         <outlet property="finishButton" destination="sGU-0F-czg" id="8ju-As-txu"/>
-                        <outlet property="parentView" destination="uQD-Hj-6nJ" id="ADw-Cj-own"/>
+                        <outlet property="parentView" destination="uQD-Hj-6nJ" id="9SR-en-DdL"/>
                         <outlet property="pieChartView" destination="40n-Yx-hHP" id="d0p-9C-utg"/>
                     </connections>
                 </viewController>

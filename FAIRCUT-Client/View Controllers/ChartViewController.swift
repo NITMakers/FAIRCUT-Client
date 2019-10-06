@@ -18,7 +18,7 @@ class ChartViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var faceStackView2: NSStackView!
     @IBOutlet weak var finishButton: NSButton!
     
-    @IBOutlet weak var parentView: ParentView!
+    @IBOutlet weak var parentView: NSSplitView!
     
     let fromAppDelegate: AppDelegate = NSApplication.shared.delegate as! AppDelegate
     
@@ -197,20 +197,29 @@ class ChartViewController: NSViewController, NSWindowDelegate {
         faceScrollView2.contentView = scrollContentView2
     }
     
-    @IBAction func onPrintButtonPressed(_ sender: Any) {
-        self.parentView.printView(self)
-    }
+    
 }
 
-class ParentView: NSSplitView {
-    override func printView(_ sender: Any?) {
+extension ChartViewController {
+    
+    @IBAction func onPrintButtonPressed(_ sender: Any) {
+        //let printOpts: [NSPrintInfo.AttributeKey: Any] = [NSPrintInfo.AttributeKey.headerAndFooter: true]
+        
         let printInfo = NSPrintInfo()
         printInfo.orientation = .landscape
         printInfo.isHorizontallyCentered = true
         printInfo.isVerticallyCentered = true
         printInfo.horizontalPagination = .fit
         printInfo.verticalPagination = .automatic
-        let op = NSPrintOperation(view: self, printInfo: printInfo)
+        
+        let date: NSDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd-HHmm"
+        
+        let op = NSPrintOperation(view: self.parentView, printInfo: printInfo)
+        op.jobTitle = "FAIRCUT-" + dateFormatter.string(from: date as Date)
+        op.canSpawnSeparateThread = true
         op.run()
+        
     }
 }
