@@ -28,7 +28,7 @@ class HomeViewController: NSViewController, NSWindowDelegate {
     }
     
     override func viewWillAppear() {
-        speechSynth.startSpeaking("Hello, user. I'm glad to see you.")
+        speechSynth.startSpeaking("Hi, it’s a pleasure to meet you.")
     }
     
     override func viewWillDisappear() {

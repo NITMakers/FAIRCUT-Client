@@ -45,7 +45,51 @@ class ChartViewController: NSViewController, NSWindowDelegate {
     }
     
     override func viewWillAppear() {
-        speechSynth.startSpeaking("This is the my distribution result.")
+        let bmiLevelArray = fromAppDelegate.bmiLevelIntArray ?? []
+        let maxLevel = bmiLevelArray.max()
+        let minLevel = bmiLevelArray.min()
+        var maxLevelIndexArray: [Int] = []
+        var minLevelIndexArray: [Int] = []
+        for (index, value) in bmiLevelArray.enumerated() {
+            if value == maxLevel {
+                maxLevelIndexArray.append(index)
+            } else if value == minLevel {
+                minLevelIndexArray.append(index)
+            }
+        }
+        if minLevelIndexArray.count == 0 || maxLevelIndexArray.count == 0 {
+            speechSynth.startSpeaking("This is the my distribution result. According to my prediction, you have almost the same value of BMI.")
+        } else {
+            var thinnestString: String = ""
+            if maxLevelIndexArray.count == 1 {
+                thinnestString.append("recipient number \(String(maxLevelIndexArray[0] + 1)) is the most thinnest.")
+            } else {
+                thinnestString.append("recipient number \(String(maxLevelIndexArray[0] + 1))")
+                maxLevelIndexArray.removeFirst()
+                let lastMaxLevelIndex: Int! = maxLevelIndexArray.last
+                maxLevelIndexArray.removeLast()
+                for index in maxLevelIndexArray {
+                    thinnestString.append(", number \(String(index + 1))")
+                }
+                thinnestString.append(" and number \(String(lastMaxLevelIndex + 1)) are the most thinnest.")
+            }
+            var fattestString: String = ""
+            if minLevelIndexArray.count == 1 {
+                fattestString.append("recipient number \(String(minLevelIndexArray[0] + 1)) is the most fattest.")
+            } else {
+                fattestString.append("recipient number \(String(minLevelIndexArray[0] + 1))")
+                minLevelIndexArray.removeFirst()
+                let lastMinLevelIndex: Int! = minLevelIndexArray.last
+                minLevelIndexArray.removeLast()
+                for index in minLevelIndexArray {
+                    fattestString.append(", number \(String(index + 1))")
+                }
+                fattestString.append(" and number \(String(lastMinLevelIndex + 1)) are the most fattest.")
+            }
+            
+            speechSynth.startSpeaking("This is the my distribution result. According to my prediction, " + fattestString + " On the other hand, " + thinnestString)
+        }
+        
         pieChartView.isHidden = true
     }
     

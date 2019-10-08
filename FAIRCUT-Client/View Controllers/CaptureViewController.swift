@@ -191,27 +191,6 @@ extension CaptureViewController: WebSocketDelegate {
         print("received message: \(text)")
     }
     
-    /*
-    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-        jetsonProgress.stopAnimation(nil)
-        
-        if text.range(of: "BMI:") != nil {
-            let substr = text[text.index(text.startIndex, offsetBy: 4) ..< text.index(text.endIndex, offsetBy: 0)]
-            print(substr)
-            
-            let bmiLevelStringsArray = substr.components(separatedBy: ",")
-            
-            fromAppDelegate.bmiLevelIntArray = bmiLevelStringsArray.map({ (value: String) -> Int in
-                return Int(value)!
-            })
-            
-        }
-        
-        // Segue
-        performSegue(withIdentifier: "SegueCapture2Chart", sender: nil)
-    }
- */
-    
 }
 
 

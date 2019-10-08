@@ -74,7 +74,7 @@ class ConfirmViewController: NSViewController, NSWindowDelegate {
         NSSound(named: "Tink")?.play()
         
         messageLabel.isHidden = false
-        messageLabel.stringValue = "Jetson Nano is predicting BMI..."
+        messageLabel.stringValue = "Sending your face images..."
         jetsonProgress.isHidden = false
         jetsonProgress.startAnimation(nil)
         
@@ -97,6 +97,8 @@ class ConfirmViewController: NSViewController, NSWindowDelegate {
         }
         
         fromAppDelegate.socket?.write(string: "EndTransmissionForFaces")
+        
+        messageLabel.stringValue = "Jetson Nano is predicting your BMI..."
     }
     
     private func setupfaceStackViewH() {

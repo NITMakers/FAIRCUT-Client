@@ -235,7 +235,7 @@ CA
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <gridView xPlacement="trailing" yPlacement="center" rowAlignment="none" rowSpacing="10" columnSpacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-Xn-S2j">
-                                            <rect key="frame" x="54" y="67" width="333" height="83"/>
+                                            <rect key="frame" x="92" y="67" width="256" height="83"/>
                                             <rows>
                                                 <gridRow id="nW7-Ki-Oh1"/>
                                                 <gridRow id="phW-cL-KMM"/>
@@ -248,7 +248,7 @@ CA
                                             <gridCells>
                                                 <gridCell row="nW7-Ki-Oh1" column="L44-T8-c3q" id="fO9-nz-QME">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Zz-Su-R5T">
-                                                        <rect key="frame" x="113" y="64" width="120" height="16"/>
+                                                        <rect key="frame" x="36" y="64" width="120" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Server IP Address: " id="di0-gu-RTy">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -258,7 +258,7 @@ CA
                                                 </gridCell>
                                                 <gridCell row="nW7-Ki-Oh1" column="G7P-oG-cOU" id="FwG-Ft-nj7">
                                                     <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-48-abK">
-                                                        <rect key="frame" x="233" y="62" width="100" height="21"/>
+                                                        <rect key="frame" x="156" y="62" width="100" height="21"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="DS2-JC-6Od">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -268,8 +268,8 @@ CA
                                                 </gridCell>
                                                 <gridCell row="phW-cL-KMM" column="L44-T8-c3q" id="CgA-eg-8BT">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SyA-3V-66C">
-                                                        <rect key="frame" x="96" y="33" width="137" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Chart color template: " id="yE4-1n-uZk">
+                                                        <rect key="frame" x="29" y="33" width="127" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Chart Color Theme: " id="yE4-1n-uZk">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -278,7 +278,7 @@ CA
                                                 </gridCell>
                                                 <gridCell row="phW-cL-KMM" column="G7P-oG-cOU" id="hDw-ru-7BE">
                                                     <popUpButton key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-9Q-0xd">
-                                                        <rect key="frame" x="236" y="28" width="100" height="25"/>
+                                                        <rect key="frame" x="159" y="28" width="100" height="25"/>
                                                         <popUpButtonCell key="cell" type="push" title="Colorful" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ciA-dV-rib" id="PVo-yg-w3B">
                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="menu"/>
@@ -297,8 +297,8 @@ CA
                                                 </gridCell>
                                                 <gridCell row="3KM-3k-d8g" column="L44-T8-c3q" id="6p4-U7-Dxt">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-cj-dEN">
-                                                        <rect key="frame" x="-2" y="2" width="235" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Heat value of the baumkuchen in kcal:" id="WnR-Zd-4hh">
+                                                        <rect key="frame" x="-2" y="2" width="158" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Total Calorie Value [kcal]:" id="WnR-Zd-4hh">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -307,7 +307,7 @@ CA
                                                 </gridCell>
                                                 <gridCell row="3KM-3k-d8g" column="G7P-oG-cOU" id="pld-nQ-NDS">
                                                     <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-Pl-21i">
-                                                        <rect key="frame" x="233" y="0.0" width="100" height="21"/>
+                                                        <rect key="frame" x="156" y="0.0" width="100" height="21"/>
                                                         <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="tyw-QG-tF0" userLabel="Total Calorie Field">
                                                             <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="CDE-0U-pbM">
                                                                 <real key="minimum" value="1"/>
