@@ -166,13 +166,14 @@ class ChartViewController: NSViewController, NSWindowDelegate {
         }
         dataSet.drawValuesEnabled = true  // グラフ上のデータ値を表示
         dataSet.yValuePosition = .outsideSlice
-        dataSet.valueLinePart1Length = 0.35
-        dataSet.valueLinePart2Length = 0.7
-        //dataSet.valueTextColor = .black
+        dataSet.valueLinePart1Length = 0.3
+        dataSet.valueLinePart2Length = 0.6
+        dataSet.valueLineColor = NSColor(red: CGFloat(170/255), green: CGFloat(170/255), blue: CGFloat(170/255), alpha: 1.0)
         dataSet.valueTextColor = NSColor(red: CGFloat(33/255), green: CGFloat(33/255), blue: CGFloat(33/255), alpha: 1.0)
-        dataSet.entryLabelFont = NSFont(name: "Avenir Next", size: 26.0)
-        dataSet.entryLabelColor = .white
-        dataSet.valueFont = NSFont(name: "Avenir Next", size: 24.0)!
+        dataSet.entryLabelFont = NSFont(name: "Avenir Next", size: 21.0)
+        //dataSet.entryLabelColor = .white // Colorful
+        dataSet.entryLabelColor = NSColor(red: CGFloat(33/255), green: CGFloat(33/255), blue: CGFloat(33/255), alpha: 1.0)
+        dataSet.valueFont = NSFont(name: "Avenir Next", size: 23.0)!
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 1

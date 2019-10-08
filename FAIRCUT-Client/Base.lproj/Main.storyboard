@@ -453,11 +453,8 @@ CA
                                     <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="lrT-JH-Fkn"/>
                                 </connections>
                             </button>
-                            <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xZ6-i8-ydi">
-                                <rect key="frame" x="467" y="22" width="16" height="16"/>
-                            </progressIndicator>
                             <textField hidden="YES" canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-Wk-RsT">
-                                <rect key="frame" x="457" y="22" width="4" height="16"/>
+                                <rect key="frame" x="481" y="22" width="4" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="bHL-6v-oXS">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -466,12 +463,10 @@ CA
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="aHi-Ep-stT" firstAttribute="leading" secondItem="xZ6-i8-ydi" secondAttribute="trailing" constant="20" id="A6N-LS-MKV"/>
                             <constraint firstItem="MrG-Ft-mY8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="J3D-ns-HZy"/>
                             <constraint firstAttribute="bottom" secondItem="aHi-Ep-stT" secondAttribute="bottom" constant="20" id="MW5-8x-3jQ"/>
-                            <constraint firstItem="xZ6-i8-ydi" firstAttribute="leading" secondItem="4AX-Wk-RsT" secondAttribute="trailing" constant="8" id="Xbo-6h-6Cf"/>
+                            <constraint firstItem="aHi-Ep-stT" firstAttribute="leading" secondItem="4AX-Wk-RsT" secondAttribute="trailing" constant="20" id="Szi-om-5ME"/>
                             <constraint firstAttribute="trailing" secondItem="MrG-Ft-mY8" secondAttribute="trailing" constant="20" id="b5w-lp-k90"/>
-                            <constraint firstAttribute="bottom" secondItem="xZ6-i8-ydi" secondAttribute="bottom" constant="22" id="g1i-er-CuO"/>
                             <constraint firstItem="MrG-Ft-mY8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="lG9-FI-Gp7"/>
                             <constraint firstAttribute="bottom" secondItem="4AX-Wk-RsT" secondAttribute="bottom" constant="22" id="ly7-dc-7sr"/>
                             <constraint firstItem="awS-pV-Nkt" firstAttribute="top" secondItem="MrG-Ft-mY8" secondAttribute="bottom" constant="20" id="pLJ-eA-Hqs"/>
@@ -484,7 +479,6 @@ CA
                     <connections>
                         <outlet property="CaptureView" destination="cez-cU-FKg" id="V9P-Jd-AFp"/>
                         <outlet property="backButton" destination="awS-pV-Nkt" id="4UU-Xa-BtX"/>
-                        <outlet property="jetsonProgress" destination="xZ6-i8-ydi" id="JiW-Gi-RGs"/>
                         <outlet property="messageLabel" destination="4AX-Wk-RsT" id="tFX-Sf-GVx"/>
                         <outlet property="nextButton" destination="aHi-Ep-stT" id="dqT-dg-cfq"/>
                         <segue destination="xag-L1-0U6" kind="custom" identifier="SegueCapture2Confirm" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="AvQ-FA-RxZ"/>
@@ -714,6 +708,7 @@ CA
         <image name="StartType" width="600" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AvQ-FA-RxZ"/>
         <segue reference="usm-Wf-01h"/>
         <segue reference="lrT-JH-Fkn"/>
         <segue reference="7gq-uU-rXY"/>

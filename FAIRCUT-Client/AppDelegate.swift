@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         //UserDefaults.standard.set(String("10.10.10.11"), forKey: "JetsonIPAddress")
         UserDefaults.standard.set(String("192.168.0.10"), forKey: "JetsonIPAddress")
-        UserDefaults.standard.set(String("colorful"), forKey: "ChartColorTemplate")
+        UserDefaults.standard.set(String("vordiplom"), forKey: "ChartColorTemplate")
         UserDefaults.standard.set(Int(542), forKey: "TotalCalories")
         
     }

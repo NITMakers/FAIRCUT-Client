@@ -26,6 +26,8 @@ class PreferencesViewController: NSViewController {
     
     override func viewWillAppear() {
         jetsonIPText.stringValue = String(UserDefaults.standard.object(forKey: "JetsonIPAddress") as! String)
+        let titleLowerCased = String(UserDefaults.standard.string(forKey: "ChartColorTemplate")!)
+        chartColorTemplatePopUp.selectItem(withTitle: (titleLowerCased.first?.uppercased())! + titleLowerCased.dropFirst())
         totalCalorieField.intValue = Int32(UserDefaults.standard.integer(forKey: "TotalCalories"))
     }
     

@@ -15,7 +15,6 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     
     @IBOutlet weak var CaptureView: NSImageView!
     @IBOutlet weak var messageLabel: NSTextField!
-    @IBOutlet weak var jetsonProgress: NSProgressIndicator!
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var nextButton: NSButton!
     
@@ -86,35 +85,11 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
         NSSound(named: "Tink")?.play()
         
         print("Next")
-        /*messageLabel.isHidden = false
-        messageLabel.stringValue = "Jetson Nano is predicting BMI..."
-        jetsonProgress.isHidden = false
-        jetsonProgress.startAnimation(nil)*/
         
         guard let faces = self.CaptureView.image?.faces else { return }
         fromAppDelegate.faceImageArray = faces
         
         performSegue(withIdentifier: "SegueCapture2Confirm", sender: nil)
-        
-        /*
-        fromAppDelegate.socket?.write(string: "BeginTransmissionForFaces_" + String(faces.count))
-        
-        for ( n, face ) in faces.enumerated() {
-            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            
-            if face.save(as: "face_#"+String(n), fileType: .png, at: url) {
-                print("file saved as face_#" + String(n) + ".png")
-            }
-            
-            //fromAppDelegate.socket.write(string: "SendAFace")
-            let faceDataURL = url.appendingPathComponent("face_#" + String(n) + ".png")
-            let faceData = NSData(contentsOf: faceDataURL)
-            let faceDataEncodedString = faceData?.base64EncodedString() ?? ""
-            fromAppDelegate.socket?.write(string: faceDataEncodedString)
-        }
-        
-        fromAppDelegate.socket?.write(string: "EndTransmissionForFaces")
-        */
     }
 }
 
