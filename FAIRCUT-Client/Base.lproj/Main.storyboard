@@ -433,13 +433,13 @@ CA
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aHi-Ep-stT">
-                                <rect key="frame" x="528" y="13" width="58" height="32"/>
-                                <buttonCell key="cell" type="push" title="Go" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hYN-EB-vHk">
+                                <rect key="frame" x="497" y="13" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Capture" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hYN-EB-vHk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onNextButton:" target="XfG-lQ-9wD" id="LWe-1y-1kq"/>
+                                    <action selector="onNextButton:" target="XfG-lQ-9wD" id="ySa-bu-LL1"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="awS-pV-Nkt">
@@ -454,10 +454,10 @@ CA
                                 </connections>
                             </button>
                             <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xZ6-i8-ydi">
-                                <rect key="frame" x="498" y="22" width="16" height="16"/>
+                                <rect key="frame" x="467" y="22" width="16" height="16"/>
                             </progressIndicator>
                             <textField hidden="YES" canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AX-Wk-RsT">
-                                <rect key="frame" x="488" y="22" width="4" height="16"/>
+                                <rect key="frame" x="457" y="22" width="4" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="bHL-6v-oXS">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -474,9 +474,9 @@ CA
                             <constraint firstAttribute="bottom" secondItem="xZ6-i8-ydi" secondAttribute="bottom" constant="22" id="g1i-er-CuO"/>
                             <constraint firstItem="MrG-Ft-mY8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="lG9-FI-Gp7"/>
                             <constraint firstAttribute="bottom" secondItem="4AX-Wk-RsT" secondAttribute="bottom" constant="22" id="ly7-dc-7sr"/>
+                            <constraint firstItem="awS-pV-Nkt" firstAttribute="top" secondItem="MrG-Ft-mY8" secondAttribute="bottom" constant="20" id="pLJ-eA-Hqs"/>
                             <constraint firstAttribute="trailing" secondItem="aHi-Ep-stT" secondAttribute="trailing" constant="20" id="q1O-O1-0E1"/>
                             <constraint firstItem="awS-pV-Nkt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="uO4-T5-mVO"/>
-                            <constraint firstItem="aHi-Ep-stT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="awS-pV-Nkt" secondAttribute="trailing" constant="456" id="vBT-Es-pDX"/>
                             <constraint firstItem="aHi-Ep-stT" firstAttribute="top" secondItem="MrG-Ft-mY8" secondAttribute="bottom" constant="20" id="vFK-LK-zn2"/>
                             <constraint firstAttribute="bottom" secondItem="awS-pV-Nkt" secondAttribute="bottom" constant="20" id="xCI-2A-tlJ"/>
                         </constraints>
@@ -486,45 +486,149 @@ CA
                         <outlet property="backButton" destination="awS-pV-Nkt" id="4UU-Xa-BtX"/>
                         <outlet property="jetsonProgress" destination="xZ6-i8-ydi" id="JiW-Gi-RGs"/>
                         <outlet property="messageLabel" destination="4AX-Wk-RsT" id="tFX-Sf-GVx"/>
-                        <outlet property="nextButton" destination="aHi-Ep-stT" id="Yvi-mH-Tf1"/>
-                        <segue destination="xag-L1-0U6" kind="custom" identifier="SegueCapture2Chart" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="anp-Hs-Pb1"/>
+                        <outlet property="nextButton" destination="aHi-Ep-stT" id="dqT-dg-cfq"/>
+                        <segue destination="xag-L1-0U6" kind="custom" identifier="SegueCapture2Confirm" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="AvQ-FA-RxZ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="403" y="1405"/>
         </scene>
-        <!--Chart View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="AbJ-yh-BCJ">
             <objects>
-                <viewController title="Chart View Controller" id="xag-L1-0U6" customClass="ChartViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Chart View Controller" id="xag-L1-0U6" userLabel="Confirm View Controller" customClass="ConfirmViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Kfe-T6-sTP">
+                        <rect key="frame" x="0.0" y="0.0" width="611" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-G4-8Sd">
+                                <rect key="frame" x="20" y="61" width="571" height="319"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" id="X9n-lY-pzv">
+                                        <rect key="frame" x="-2" y="0.0" width="575" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="The Result of Face Recognition" id="AsU-YP-Yeg">
+                                            <font key="font" size="30" name="AvenirNext-Regular"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <customView autoresizesSubviews="NO" id="ypD-0P-RPO" userLabel="Face Scroll View H" customClass="NSScrollView">
+                                        <rect key="frame" x="0.0" y="42" width="571" height="277"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wra-En-X17">
+                                                <rect key="frame" x="0.0" y="0.0" width="571" height="277"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Wra-En-X17" secondAttribute="bottom" id="2KY-0n-9OJ"/>
+                                            <constraint firstItem="Wra-En-X17" firstAttribute="top" secondItem="ypD-0P-RPO" secondAttribute="top" id="HAv-zp-uq9"/>
+                                            <constraint firstItem="Wra-En-X17" firstAttribute="leading" secondItem="ypD-0P-RPO" secondAttribute="leading" id="T1l-vH-APi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wra-En-X17" secondAttribute="trailing" id="kqw-0y-Sdc"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="400"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-0F-czg" userLabel="Go Button">
+                                <rect key="frame" x="535" y="13" width="62" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cut" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I1k-Rr-hOh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onGoButton:" target="xag-L1-0U6" id="oCZ-GE-G7Z"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SsQ-Kh-QDs">
+                                <rect key="frame" x="14" y="13" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0nm-dx-Ksf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onBackButton:" target="xag-L1-0U6" id="YQ2-m5-va4"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="usm-Wf-01h"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMC-0b-444" userLabel="Message Label">
+                                <rect key="frame" x="507" y="23" width="4" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="kzT-LU-5uA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="SpC-Tw-nmD" userLabel="Jetson Progress">
+                                <rect key="frame" x="517" y="23" width="16" height="16"/>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="top" secondItem="iiE-G4-8Sd" secondAttribute="bottom" constant="20" id="0Ej-gb-ZQb"/>
+                            <constraint firstItem="SpC-Tw-nmD" firstAttribute="leading" secondItem="LMC-0b-444" secondAttribute="trailing" constant="8" id="5rE-Rm-vwJ"/>
+                            <constraint firstAttribute="trailing" secondItem="iiE-G4-8Sd" secondAttribute="trailing" constant="20" id="78M-Yz-Tp6"/>
+                            <constraint firstItem="sGU-0F-czg" firstAttribute="leading" secondItem="SpC-Tw-nmD" secondAttribute="trailing" constant="8" id="SNp-wv-ncP"/>
+                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="Uwu-h7-7c5"/>
+                            <constraint firstItem="iiE-G4-8Sd" firstAttribute="top" secondItem="Kfe-T6-sTP" secondAttribute="top" constant="20" id="ZNY-oF-Ixc"/>
+                            <constraint firstItem="sGU-0F-czg" firstAttribute="top" secondItem="iiE-G4-8Sd" secondAttribute="bottom" constant="20" id="leU-tJ-etn"/>
+                            <constraint firstAttribute="trailing" secondItem="sGU-0F-czg" secondAttribute="trailing" constant="20" id="mrG-jv-Ouh"/>
+                            <constraint firstItem="iiE-G4-8Sd" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="oh2-xf-Erx"/>
+                            <constraint firstAttribute="bottom" secondItem="SsQ-Kh-QDs" secondAttribute="bottom" constant="20" id="sDr-Xb-LGN"/>
+                            <constraint firstAttribute="bottom" secondItem="LMC-0b-444" secondAttribute="bottom" constant="23" id="sih-4G-mgy"/>
+                            <constraint firstAttribute="bottom" secondItem="SpC-Tw-nmD" secondAttribute="bottom" constant="23" id="u2k-N3-0rx"/>
+                            <constraint firstAttribute="bottom" secondItem="sGU-0F-czg" secondAttribute="bottom" constant="20" id="yKn-DZ-Cuh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="SsQ-Kh-QDs" id="DYU-B7-6Vr"/>
+                        <outlet property="faceScrollViewH" destination="ypD-0P-RPO" id="siZ-Qz-ms2"/>
+                        <outlet property="faceStackViewH" destination="Wra-En-X17" id="wvc-lZ-35V"/>
+                        <outlet property="goButton" destination="sGU-0F-czg" id="gMl-mk-HoP"/>
+                        <outlet property="jetsonProgress" destination="SpC-Tw-nmD" id="NNa-fR-drt"/>
+                        <outlet property="messageLabel" destination="LMC-0b-444" id="eVD-ZJ-4wK"/>
+                        <segue destination="ggf-Ts-ukC" kind="custom" identifier="SegueConfirm2Chart" customClass="ForwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="PoI-2r-qWQ"/>
+                    </connections>
+                </viewController>
+                <customObject id="Hkf-MG-0AT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1405"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="6SY-56-qVU">
+            <objects>
+                <viewController title="Chart View Controller" id="ggf-Ts-ukC" customClass="ChartViewController" customModule="FAIRCUT_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Pom-09-d7q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-Hj-6nJ">
+                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sL9-s7-rnR">
                                 <rect key="frame" x="20" y="61" width="560" height="319"/>
                                 <subviews>
-                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" id="vfk-1C-k2S">
+                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" id="cHV-XV-4A8">
                                         <rect key="frame" x="0.0" y="0.0" width="419" height="319"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <customView autoresizesSubviews="NO" misplaced="YES" id="rDv-51-JlQ" userLabel="Face Scroll View 2" customClass="NSScrollView">
+                                            <customView autoresizesSubviews="NO" misplaced="YES" id="VbZ-2V-6fq" userLabel="Face Scroll View 2" customClass="NSScrollView">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="319"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <stackView orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4h-DY-gTS" userLabel="Face Stack View 2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="319"/>
+                                                    <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS2-E2-Ocx" userLabel="Face Stack View 2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="319"/>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="j4h-DY-gTS" firstAttribute="leading" secondItem="rDv-51-JlQ" secondAttribute="leading" id="0XN-z4-wH6"/>
-                                                    <constraint firstAttribute="bottom" secondItem="j4h-DY-gTS" secondAttribute="bottom" id="460-GN-lgg"/>
-                                                    <constraint firstItem="j4h-DY-gTS" firstAttribute="top" secondItem="rDv-51-JlQ" secondAttribute="top" id="YIy-wi-wOd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="j4h-DY-gTS" secondAttribute="trailing" id="k7P-tb-uFR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JS2-E2-Ocx" secondAttribute="bottom" id="4Uv-Qd-p2E"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JS2-E2-Ocx" secondAttribute="trailing" id="HKJ-6O-xbO"/>
+                                                    <constraint firstItem="JS2-E2-Ocx" firstAttribute="leading" secondItem="VbZ-2V-6fq" secondAttribute="leading" id="r3m-qE-4Kf"/>
+                                                    <constraint firstItem="JS2-E2-Ocx" firstAttribute="top" secondItem="VbZ-2V-6fq" secondAttribute="top" id="yc8-gz-e3x"/>
                                                 </constraints>
                                             </customView>
-                                            <customView fixedFrame="YES" id="40n-Yx-hHP" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
+                                            <customView fixedFrame="YES" id="cIr-yp-fmZ" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="145" y="0.0" width="274" height="319"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </customView>
@@ -534,19 +638,19 @@ CA
                                             <real value="250"/>
                                         </holdingPriorities>
                                     </splitView>
-                                    <customView autoresizesSubviews="NO" misplaced="YES" id="l5X-e8-z4I" userLabel="Face Scroll View 1" customClass="NSScrollView">
+                                    <customView autoresizesSubviews="NO" misplaced="YES" id="YCL-PC-yBT" userLabel="Face Scroll View 1" customClass="NSScrollView">
                                         <rect key="frame" x="420" y="0.0" width="140" height="319"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <stackView orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-03-9wb" userLabel="Face Stack View 1">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="319"/>
+                                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2od-cc-7EL" userLabel="Face Stack View 1">
+                                                <rect key="frame" x="0.0" y="0.0" width="558" height="319"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="cVs-03-9wb" firstAttribute="top" secondItem="l5X-e8-z4I" secondAttribute="top" id="4L7-Mq-rkC"/>
-                                            <constraint firstAttribute="trailing" secondItem="cVs-03-9wb" secondAttribute="trailing" id="C8t-N0-FwM"/>
-                                            <constraint firstItem="cVs-03-9wb" firstAttribute="leading" secondItem="l5X-e8-z4I" secondAttribute="leading" id="kDh-mD-INE"/>
-                                            <constraint firstAttribute="bottom" secondItem="cVs-03-9wb" secondAttribute="bottom" id="wtk-ud-Kh6"/>
+                                            <constraint firstItem="2od-cc-7EL" firstAttribute="top" secondItem="YCL-PC-yBT" secondAttribute="top" id="2l5-rZ-pyc"/>
+                                            <constraint firstAttribute="bottom" secondItem="2od-cc-7EL" secondAttribute="bottom" id="KeI-12-iID"/>
+                                            <constraint firstAttribute="trailing" secondItem="2od-cc-7EL" secondAttribute="trailing" id="dv2-Ad-KdS"/>
+                                            <constraint firstItem="2od-cc-7EL" firstAttribute="leading" secondItem="YCL-PC-yBT" secondAttribute="leading" id="kLz-Ih-kLr"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -555,55 +659,54 @@ CA
                                     <real value="350"/>
                                 </holdingPriorities>
                             </splitView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-0F-czg">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vr3-pq-KS3">
                                 <rect key="frame" x="510" y="13" width="76" height="32"/>
-                                <buttonCell key="cell" type="push" title="Finish" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I1k-Rr-hOh">
+                                <buttonCell key="cell" type="push" title="Finish" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v6K-Ca-yeG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="QH5-sF-hj5"/>
+                                    <segue destination="xZo-Zg-AbP" kind="custom" customClass="BackwardSlideSegue" customModule="FAIRCUT_Client" customModuleProvider="target" id="j1Q-Gj-1In"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SsQ-Kh-QDs">
-                                <rect key="frame" x="14" y="13" width="80" height="32"/>
-                                <buttonCell key="cell" type="push" title="Print..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0nm-dx-Ksf">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nga-hD-h6z">
+                                <rect key="frame" x="430" y="13" width="80" height="32"/>
+                                <buttonCell key="cell" type="push" title="Print..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rm8-ln-Yb6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">p</string>
                                     <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onPrintButtonPressed:" target="xag-L1-0U6" id="zql-uv-GaS"/>
+                                    <action selector="onPrintButtonPressed:" target="ggf-Ts-ukC" id="DLD-at-Zaz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="uQD-Hj-6nJ" firstAttribute="top" secondItem="Kfe-T6-sTP" secondAttribute="top" constant="20" id="0vf-Lu-e9Z"/>
-                            <constraint firstItem="sGU-0F-czg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="516" id="6ZO-Iz-pZ3"/>
-                            <constraint firstItem="sGU-0F-czg" firstAttribute="top" secondItem="uQD-Hj-6nJ" secondAttribute="bottom" constant="20" id="Fth-JT-Fok"/>
-                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="Uwu-h7-7c5"/>
-                            <constraint firstItem="uQD-Hj-6nJ" firstAttribute="leading" secondItem="Kfe-T6-sTP" secondAttribute="leading" constant="20" id="b2Z-Fz-T7P"/>
-                            <constraint firstAttribute="trailing" secondItem="uQD-Hj-6nJ" secondAttribute="trailing" constant="20" id="lRX-gQ-YPb"/>
-                            <constraint firstAttribute="trailing" secondItem="sGU-0F-czg" secondAttribute="trailing" constant="20" id="mrG-jv-Ouh"/>
-                            <constraint firstItem="SsQ-Kh-QDs" firstAttribute="top" secondItem="uQD-Hj-6nJ" secondAttribute="bottom" constant="20" id="rZ3-f3-Rkt"/>
-                            <constraint firstAttribute="bottom" secondItem="SsQ-Kh-QDs" secondAttribute="bottom" constant="20" id="sDr-Xb-LGN"/>
-                            <constraint firstAttribute="bottom" secondItem="sGU-0F-czg" secondAttribute="bottom" constant="20" id="yKn-DZ-Cuh"/>
+                            <constraint firstAttribute="bottom" secondItem="Vr3-pq-KS3" secondAttribute="bottom" constant="20" id="2FQ-Xg-mPu"/>
+                            <constraint firstItem="sL9-s7-rnR" firstAttribute="leading" secondItem="Pom-09-d7q" secondAttribute="leading" constant="20" id="J6N-cx-NoH"/>
+                            <constraint firstItem="Vr3-pq-KS3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pom-09-d7q" secondAttribute="leading" constant="516" id="NVH-ZE-6sr"/>
+                            <constraint firstItem="Vr3-pq-KS3" firstAttribute="leading" secondItem="nga-hD-h6z" secondAttribute="trailing" constant="12" id="Rns-Hr-Fwi"/>
+                            <constraint firstAttribute="bottom" secondItem="nga-hD-h6z" secondAttribute="bottom" constant="20" id="ekb-ls-gDy"/>
+                            <constraint firstItem="Vr3-pq-KS3" firstAttribute="top" secondItem="sL9-s7-rnR" secondAttribute="bottom" constant="20" id="hvA-lH-wL0"/>
+                            <constraint firstItem="sL9-s7-rnR" firstAttribute="top" secondItem="Pom-09-d7q" secondAttribute="top" constant="20" id="i6U-ir-VWt"/>
+                            <constraint firstAttribute="trailing" secondItem="sL9-s7-rnR" secondAttribute="trailing" constant="20" id="lm1-3u-ODT"/>
+                            <constraint firstAttribute="trailing" secondItem="Vr3-pq-KS3" secondAttribute="trailing" constant="20" id="pfr-Vz-bsv"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="faceScrollView1" destination="l5X-e8-z4I" id="DIe-4d-amz"/>
-                        <outlet property="faceScrollView2" destination="rDv-51-JlQ" id="fGu-x5-tBM"/>
-                        <outlet property="faceStackView1" destination="cVs-03-9wb" id="lUm-6D-Ujn"/>
-                        <outlet property="faceStackView2" destination="j4h-DY-gTS" id="4o1-sd-VgA"/>
-                        <outlet property="finishButton" destination="sGU-0F-czg" id="8ju-As-txu"/>
-                        <outlet property="parentView" destination="uQD-Hj-6nJ" id="9SR-en-DdL"/>
-                        <outlet property="pieChartView" destination="40n-Yx-hHP" id="d0p-9C-utg"/>
+                        <outlet property="faceScrollView1" destination="YCL-PC-yBT" id="K9a-xz-WNo"/>
+                        <outlet property="faceScrollView2" destination="VbZ-2V-6fq" id="hat-wh-Xlf"/>
+                        <outlet property="faceStackView1" destination="2od-cc-7EL" id="ckL-rM-lrX"/>
+                        <outlet property="faceStackView2" destination="JS2-E2-Ocx" id="5XC-SI-EGP"/>
+                        <outlet property="finishButton" destination="Vr3-pq-KS3" id="TmS-nK-cdQ"/>
+                        <outlet property="parentView" destination="sL9-s7-rnR" id="S43-p7-yUv"/>
+                        <outlet property="pieChartView" destination="cIr-yp-fmZ" id="vRl-5q-nrr"/>
                     </connections>
                 </viewController>
-                <customObject id="Hkf-MG-0AT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Fbr-eF-mZl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="1405"/>
+            <point key="canvasLocation" x="1744" y="1405"/>
         </scene>
     </scenes>
     <resources>
@@ -611,7 +714,8 @@ CA
         <image name="StartType" width="600" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QH5-sF-hj5"/>
+        <segue reference="usm-Wf-01h"/>
+        <segue reference="lrT-JH-Fkn"/>
         <segue reference="7gq-uU-rXY"/>
     </inferredMetricsTieBreakers>
 </document>

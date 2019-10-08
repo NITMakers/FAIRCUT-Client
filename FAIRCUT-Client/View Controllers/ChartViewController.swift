@@ -61,6 +61,7 @@ class ChartViewController: NSViewController, NSWindowDelegate {
     }
     
     override func viewDidDisappear() {
+        fromAppDelegate.socket?.disconnect()
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {
@@ -84,8 +85,9 @@ class ChartViewController: NSViewController, NSWindowDelegate {
         textStyle.alignment = .center
         let centerText: NSMutableAttributedString = NSMutableAttributedString(string: "The Baumkuchen\nDistribution by AI")
         let textFontAttributes = [
-            NSAttributedString.Key.font: NSFont(name: "Avenir Next", size: 32.0),
-            NSAttributedString.Key.foregroundColor: NSColor.black,
+            NSAttributedString.Key.font: NSFont(name: "Avenir Next", size: 30.0),
+            //NSAttributedString.Key.foregroundColor: NSColor.black,
+            NSAttributedString.Key.foregroundColor: NSColor(red: CGFloat(33/255), green: CGFloat(33/255), blue: CGFloat(33/255), alpha: 1.0),
             NSAttributedString.Key.paragraphStyle: textStyle
         ]
         centerText.setAttributes(textFontAttributes as [NSAttributedString.Key : Any], range: NSRange(location: 0, length: centerText.string.count))
@@ -122,7 +124,8 @@ class ChartViewController: NSViewController, NSWindowDelegate {
         dataSet.yValuePosition = .outsideSlice
         dataSet.valueLinePart1Length = 0.35
         dataSet.valueLinePart2Length = 0.7
-        dataSet.valueTextColor = .black
+        //dataSet.valueTextColor = .black
+        dataSet.valueTextColor = NSColor(red: CGFloat(33/255), green: CGFloat(33/255), blue: CGFloat(33/255), alpha: 1.0)
         dataSet.entryLabelFont = NSFont(name: "Avenir Next", size: 26.0)
         dataSet.entryLabelColor = .white
         dataSet.valueFont = NSFont(name: "Avenir Next", size: 24.0)!
@@ -191,10 +194,12 @@ class ChartViewController: NSViewController, NSWindowDelegate {
         scrollContentView1.drawsBackground = false
         faceScrollView1.contentView = scrollContentView1
         
-        let scrollContentView2 = CenteringClipView(frame: faceStackView2.frame)
-        scrollContentView2.documentView = faceStackView2
-        scrollContentView2.drawsBackground = false
-        faceScrollView2.contentView = scrollContentView2
+        if faces.count > 0 {
+            let scrollContentView2 = CenteringClipView(frame: faceStackView2.frame)
+            scrollContentView2.documentView = faceStackView2
+            scrollContentView2.drawsBackground = false
+            faceScrollView2.contentView = scrollContentView2
+        }
     }
     
     

@@ -19,8 +19,6 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var backButton: NSButton!
     @IBOutlet weak var nextButton: NSButton!
     
-    //var socket = WebSocket(url: URL(string: "ws://10.10.10.11:8080/")!)
-    var socket = WebSocket(url: URL(string: "ws://" + String(UserDefaults.standard.object(forKey: "JetsonIPAddress") as! String) + ":8080/")!)
     
     let fromAppDelegate: AppDelegate = NSApplication.shared.delegate as! AppDelegate
     
@@ -35,8 +33,9 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
         speechSynth.rate = 150
         speechSynth.volume = 0.7
         
-        socket.delegate = self
-        socket.connect()
+        fromAppDelegate.socket = WebSocket(url: URL(string: "ws://" + String(UserDefaults.standard.object(forKey: "JetsonIPAddress") as! String) + ":8080/")!)
+        //fromAppDelegate.socket?.delegate = self
+        fromAppDelegate.socket?.connect()
         
         nextButton.keyEquivalent = String(utf16CodeUnits: [unichar(NSCarriageReturnCharacter)], count: 1)
         backButton.keyEquivalent = String(utf16CodeUnits: [unichar(NSBackspaceCharacter)], count: 1)
@@ -49,7 +48,7 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     override func viewWillAppear() {
         CameraManager.shared.startSession(delegate: self)
         
-        if socket.isConnected {
+        if fromAppDelegate.socket?.isConnected ?? false {
             messageLabel.isHidden = true
             speechSynth.startSpeaking("Please capture your face for predicting.")
         }else{
@@ -65,7 +64,7 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     }
     
     override func viewDidDisappear() {
-        socket.disconnect()
+        //fromAppDelegate.socket.disconnect()
     }
 
     override var representedObject: Any? {
@@ -86,14 +85,19 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     @IBAction func onNextButton(_ sender: Any) {
         NSSound(named: "Tink")?.play()
         
-        messageLabel.isHidden = false
+        print("Next")
+        /*messageLabel.isHidden = false
         messageLabel.stringValue = "Jetson Nano is predicting BMI..."
         jetsonProgress.isHidden = false
-        jetsonProgress.startAnimation(nil)
+        jetsonProgress.startAnimation(nil)*/
         
         guard let faces = self.CaptureView.image?.faces else { return }
         fromAppDelegate.faceImageArray = faces
-        socket.write(string: "BeginTransmissionForFaces_" + String(faces.count))
+        
+        performSegue(withIdentifier: "SegueCapture2Confirm", sender: nil)
+        
+        /*
+        fromAppDelegate.socket?.write(string: "BeginTransmissionForFaces_" + String(faces.count))
         
         for ( n, face ) in faces.enumerated() {
             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -102,14 +106,15 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
                 print("file saved as face_#" + String(n) + ".png")
             }
             
-            //socket.write(string: "SendAFace")
+            //fromAppDelegate.socket.write(string: "SendAFace")
             let faceDataURL = url.appendingPathComponent("face_#" + String(n) + ".png")
             let faceData = NSData(contentsOf: faceDataURL)
             let faceDataEncodedString = faceData?.base64EncodedString() ?? ""
-            socket.write(string: faceDataEncodedString)
+            fromAppDelegate.socket?.write(string: faceDataEncodedString)
         }
         
-        socket.write(string: "EndTransmissionForFaces")
+        fromAppDelegate.socket?.write(string: "EndTransmissionForFaces")
+        */
     }
 }
 
@@ -183,6 +188,11 @@ extension CaptureViewController: WebSocketDelegate {
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+        print("received message: \(text)")
+    }
+    
+    /*
+    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         jetsonProgress.stopAnimation(nil)
         
         if text.range(of: "BMI:") != nil {
@@ -200,6 +210,7 @@ extension CaptureViewController: WebSocketDelegate {
         // Segue
         performSegue(withIdentifier: "SegueCapture2Chart", sender: nil)
     }
+ */
     
 }
 
