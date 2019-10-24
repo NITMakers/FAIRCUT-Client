@@ -260,7 +260,9 @@ extension ChartViewController {
         printInfo.isHorizontallyCentered = true
         printInfo.isVerticallyCentered = true
         printInfo.horizontalPagination = .fit
-        printInfo.verticalPagination = .automatic
+        printInfo.verticalPagination = .fit
+        printInfo.paperName = NSPrinter.PaperName(String(UserDefaults.standard.string(forKey: "PaperSize")!))
+        
         
         let date: NSDate = NSDate()
         let dateFormatter = DateFormatter()

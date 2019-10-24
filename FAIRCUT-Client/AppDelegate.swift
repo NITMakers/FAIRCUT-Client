@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.set(String("192.168.0.10"), forKey: "JetsonIPAddress")
         UserDefaults.standard.set(String("vordiplom"), forKey: "ChartColorTemplate")
         UserDefaults.standard.set(Int(542), forKey: "TotalCalories")
-        
+        UserDefaults.standard.set(String("A5"), forKey: "PaperSize")
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

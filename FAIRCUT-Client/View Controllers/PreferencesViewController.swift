@@ -17,6 +17,7 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet weak var totalCalorieField: NSTextFieldCell!
     
+    @IBOutlet weak var paperSizeField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class PreferencesViewController: NSViewController {
         let titleLowerCased = String(UserDefaults.standard.string(forKey: "ChartColorTemplate")!)
         chartColorTemplatePopUp.selectItem(withTitle: (titleLowerCased.first?.uppercased())! + titleLowerCased.dropFirst())
         totalCalorieField.intValue = Int32(UserDefaults.standard.integer(forKey: "TotalCalories"))
+        paperSizeField.stringValue = String(UserDefaults.standard.string(forKey: "PaperSize")!)
     }
     
     override func viewWillDisappear() {
@@ -36,6 +38,7 @@ class PreferencesViewController: NSViewController {
         let colorTemplateString = chartColorTemplatePopUp.titleOfSelectedItem?.lowercased()
         UserDefaults.standard.set(colorTemplateString, forKey: "ChartColorTemplate")
         UserDefaults.standard.set(Int(totalCalorieField.intValue), forKey: "TotalCalories")
+        UserDefaults.standard.set(String(paperSizeField.stringValue), forKey: "PaperSize")
     }
     
 }
