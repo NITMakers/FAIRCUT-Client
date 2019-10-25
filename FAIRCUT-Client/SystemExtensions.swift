@@ -10,7 +10,7 @@ import Cocoa
 import AVFoundation
 
 
-// For face tracking
+// MARK: For face tracking
 class DrawRectangle: NSView{
     override func draw(_ dirtyRect: NSRect) {
         let context = NSGraphicsContext.current?.cgContext
@@ -21,7 +21,7 @@ class DrawRectangle: NSView{
     }
 }
 
-// For store faces
+// MARK: For store faces
 extension NSImage {
     var ciImage: CIImage? {
         guard let data = tiffRepresentation else { return nil }
@@ -49,7 +49,7 @@ extension NSImage {
     }
 }
 
-// For save as png
+// MARK: For save as png
 extension NSImage {
     func save(as fileName: String, fileType: NSBitmapImageRep.FileType = .jpeg, at directory: URL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)) -> Bool {
         guard let tiffRepresentation = tiffRepresentation, directory.isDirectory, !fileName.isEmpty else { return false }
@@ -102,7 +102,7 @@ extension NSBitmapImageRep.FileType {
 }
 
 
-// For edit nsimages
+// MARK: For edit nsimages
 extension NSImage {
     
     /// The height of the image.
@@ -181,7 +181,7 @@ extension NSImage {
     
 }
 
-// For get NSClipView center
+// MARK: For get NSClipView center
 class CenteringClipView: NSClipView {
     override func constrainBoundsRect(_ proposedBounds: NSRect) -> NSRect {
         guard let documentView = documentView else { return super.constrainBoundsRect(proposedBounds) }
@@ -274,7 +274,7 @@ class CenteringClipView: NSClipView {
 }
 
 
-// For check if string is a IP address
+// MARK: For check if string is a IP address
 extension String {
     func isIPv4() -> Bool {
         var sin = sockaddr_in()
@@ -287,5 +287,29 @@ extension String {
     }
     
     func isIpAddress() -> Bool { return self.isIPv6() || self.isIPv4() }
+}
+
+//  MARK: For convert nsimage to nsbitmapimagerep
+extension NSImage {
+    func bitmapImageRepresentation() -> NSBitmapImageRep? {
+        let width = self.size.width
+        let height = self.size.height
+
+        if width < 1 || height < 1 {
+            return nil
+        }
+        
+        if let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(width), pixelsHigh: Int(height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSColorSpaceName.calibratedRGB, bytesPerRow: Int(width) * 4, bitsPerPixel: 32)
+        {
+            let ctx = NSGraphicsContext.init(bitmapImageRep: rep)
+            NSGraphicsContext.saveGraphicsState()
+            NSGraphicsContext.current = ctx
+            self.draw(at: NSZeroPoint, from: NSZeroRect, operation: NSCompositingOperation.copy, fraction: 1.0)
+            ctx?.flushGraphics()
+            NSGraphicsContext.restoreGraphicsState()
+            return rep
+        }
+        return nil
+    }
 }
 

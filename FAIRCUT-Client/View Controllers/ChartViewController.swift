@@ -246,32 +246,58 @@ class ChartViewController: NSViewController, NSWindowDelegate {
             faceScrollView2.contentView = scrollContentView2
         }
     }
-    
-    
 }
 
 extension ChartViewController {
     
     @IBAction func onPrintButtonPressed(_ sender: Any) {
-        //let printOpts: [NSPrintInfo.AttributeKey: Any] = [NSPrintInfo.AttributeKey.headerAndFooter: true]
+        // MARK: Get date
+        let date: NSDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd-HHmm"
         
+        // MARK: Setup NSPrintInfo
         let printInfo = NSPrintInfo()
         printInfo.orientation = .landscape
         printInfo.isHorizontallyCentered = true
         printInfo.isVerticallyCentered = true
         printInfo.horizontalPagination = .fit
-        printInfo.verticalPagination = .fit
+        printInfo.verticalPagination = .automatic
         printInfo.paperName = NSPrinter.PaperName(String(UserDefaults.standard.string(forKey: "PaperSize")!))
+        printInfo.topMargin = 0
+        printInfo.bottomMargin = 0
+        printInfo.leftMargin = 0
+        printInfo.rightMargin = 0
         
+        // MARK: create chart rep
+        let chartRep = self.parentView.bitmapImageRepForCachingDisplay(in: self.parentView.bounds)!
+        self.parentView.cacheDisplay(in: self.parentView.bounds, to: chartRep)
         
-        let date: NSDate = NSDate()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd-HHmm"
+        // MARK: create empty image
+        let printImage = NSImage(size: self.parentView.bounds.size)
         
-        let op = NSPrintOperation(view: self.parentView, printInfo: printInfo)
+        // MARK: add chart to the image
+        printImage.addRepresentation(chartRep)
+        
+        // MARK: create printimageview with the image
+        let printImageView = NSImageView(frame: self.parentView.bounds)
+        printImageView.image = printImage.resize(withSize: NSSize(width: printImageView.bounds.size.width * 0.7, height: printImageView.bounds.size.height * 0.7))!
+        
+        // MARK: create subview with header/footer template
+        let printImageSubView = NSImageView(frame: printImageView.bounds)
+        if Bool(UserDefaults.standard.bool(forKey: "CouponSwitch")) == true {
+            printImageSubView.image = NSImage(named: "TemplateWithCoupon")!
+        } else {
+            printImageSubView.image = NSImage(named: "TemplateWithNoCoupon")!
+        }
+        
+        // MARK: merge views
+        printImageView.addSubview(printImageSubView)
+        
+        // MARK: do print operation
+        let op = NSPrintOperation(view: printImageView, printInfo: printInfo)
         op.jobTitle = "FAIRCUT-" + dateFormatter.string(from: date as Date)
         op.canSpawnSeparateThread = true
         op.run()
-        
     }
 }

@@ -84,8 +84,6 @@ class CaptureViewController: NSViewController, NSWindowDelegate {
     @IBAction func onNextButton(_ sender: Any) {
         NSSound(named: "Tink")?.play()
         
-        print("Next")
-        
         guard let faces = self.CaptureView.image?.faces else { return }
         fromAppDelegate.faceImageArray = faces
         

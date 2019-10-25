@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.set(String("vordiplom"), forKey: "ChartColorTemplate")
         UserDefaults.standard.set(Int(542), forKey: "TotalCalories")
         UserDefaults.standard.set(String("A5"), forKey: "PaperSize")
+        UserDefaults.standard.set(Bool(true), forKey: "CouponSwitch")
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
